@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Aunt Tsolmon! ??</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    background: linear-gradient(135deg, #ffb6d9, #d9b3ff, #ffe6a7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    width: 100%;
+    padding: 40px 25px;
+    background: rgba(255,255,255,0.93);
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 45px rgba(128,0,90,0.2);
+    animation: appear 1.3s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #e84393;
+    font-size: clamp(30px, 7vw, 46px);
+    margin-bottom: 20px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px #ffb6d9; }
+    to { text-shadow: 0 0 20px #ff69b4; }
+}
+
+h2 {
+    color: #b84b94;
+    font-size: 26px;
+    margin: 15px 0;
+}
+
+.cake {
+    font-size: 85px;
+    margin: 15px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.message {
+    color: #71406c;
+    font-size: 18px;
+    line-height: 1.9;
+    margin: 25px 0;
+}
+
+.highlight {
+    color: #e84393;
+    font-weight: bold;
+}
+
+.decorations {
+    font-size: 35px;
+    margin: 20px;
+}
+
+button {
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff4fa3, #a855f7);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px #e8a2cf;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+#surprise {
+    display: none;
+    margin-top: 25px;
+    padding: 22px;
+    background: #fff0f7;
+    border-radius: 20px;
+    color: #d63384;
+    font-size: 19px;
+    line-height: 1.8;
+    animation: appear 1s ease;
+}
+
+footer {
+    margin-top: 30px;
+    color: #a04c87;
+    font-size: 15px;
+}
+
+.balloon {
+    position: fixed;
+    bottom: -100px;
+    font-size: 40px;
+    animation: float 9s linear forwards;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0) rotate(0);
+    }
+    to {
+        transform: translateY(-120vh) rotate(30deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>?? Happy Birthday! ??</h1>
+
+    <div class="cake">??</div>
+
+    <h2>Dear Aunt Tsolmon ??</h2>
+
+    <div class="message">
+
+        Wishing you the happiest birthday ever! ??<br><br>
+
+        May your special day be filled with
+        <span class="highlight">love, laughter, happiness</span>
+        and beautiful memories!<br><br>
+
+        Thank you for being such a wonderful,
+        caring and special aunt. You deserve
+        all the happiness in the world! ??<br><br>
+
+        May all your dreams come true.
+        May you always stay healthy, happy,
+        blessed and surrounded by people who love you! ?<br><br>
+
+        <span class="highlight">
+            You are truly one of a kind! ??
+        </span>
+
+    </div>
+
+    <div class="decorations">
+        ?? ?? ?? ?? ??
+    </div>
+
+    <button onclick="showSurprise()">
+        ?? Open Your Surprise
+    </button>
+
+    <button onclick="celebrate()">
+        ?? More Confetti!
+    </button>
+
+    <div id="surprise">
+        ?? SURPRISE, AUNT TSOLMON! ??<br><br>
+
+        You are not just my aunt,
+        you are a blessing in my life! ??<br><br>
+
+        I hope your life is always filled
+        with sunshine, smiles and endless joy.<br><br>
+
+        Sending you the biggest hug
+        and lots of love! ??<br><br>
+
+        Love you, Aunt Tsolmon! ??
+    </div>
+
+    <footer>
+        Made with ?? by Enguun, especially for Aunt Tsolmon!
+    </footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script>
+
+// Confetti celebration
+function celebrate() {
+
+    if (typeof confetti !== "function") {
+        alert("Please connect to the internet to load confetti!");
+        return;
+    }
+
+    confetti({
+        particleCount: 180,
+        spread: 110,
+        origin: { y: 0.6 },
+        colors: [
+            '#ff69b4',
+            '#ffd700',
+            '#a855f7',
+            '#ff1493',
+            '#ffffff'
+        ]
+    });
+
+    setTimeout(() => {
+        confetti({
+            particleCount: 100,
+            angle: 60,
+            spread: 70,
+            origin: { x: 0 }
+        });
+
+        confetti({
+            particleCount: 100,
+            angle: 120,
+            spread: 70,
+            origin: { x: 1 }
+        });
+    }, 400);
+}
+
+// Surprise message
+function showSurprise() {
+    document.getElementById("surprise").style.display = "block";
+    celebrate();
+}
+
+// Celebrate when website opens
+window.addEventListener("load", function() {
+    setTimeout(celebrate, 700);
+});
+
+// Floating balloons
+const balloons = ["??", "??", "??", "??", "??"];
+
+function createBalloon() {
+
+    const balloon = document.createElement("div");
+
+    balloon.className = "balloon";
+
+    balloon.textContent =
+        balloons[Math.floor(Math.random() * balloons.length)];
+
+    balloon.style.left = Math.random() * 100 + "vw";
+
+    balloon.style.animationDuration =
+        (6 + Math.random() * 5) + "s";
+
+    document.body.appendChild(balloon);
+
+    setTimeout(() => {
+        balloon.remove();
+    }, 11000);
+}
+
+setInterval(createBalloon, 900);
+
+</script>
+
+</body>
+</html>
